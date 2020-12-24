@@ -7,19 +7,19 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form>
 <% if (request.getParameter("btn") == null){ %>
-<p>お使いのOSを選んでください</p>
-<input type="checkbox" name="os" value="win">Windows
-<input type="checkbox" name="os" value="mac">Mac
-<input type="checkbox" name="os" value="linux">Linux
-<input type="submit" name="btn" value="送信">
-</form>
+	<form>
+	<p>お使いのOSを選んでください</p>
+	<input type="checkbox" name="os" value="win">Windows
+	<input type="checkbox" name="os" value="mac">Mac
+	<input type="checkbox" name="os" value="linux">Linux
+	<input type="submit" name="btn" value="送信">
+	</form>
 <%}else{
-String[] oss=request.getParameterValues("os");
-String result=oss==null ? "[選択なし]":String.join(",",oss);
-%>
-<p><%=result %></p>
+	String[] oss=request.getParameterValues("os");
+	String result=oss==null ? "[選択なし]":String.join(",",oss);
+	%>
+	<p><%=result %></p>
 <%} %>
 </body>
 </html>

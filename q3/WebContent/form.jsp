@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="/q3/Result" method="post">
+<form action="Result" method="post">
 スペイン語で月曜はLunesである。
 <input type="radio" name="ans" value="yes">はい
 <input type="radio" name="ans" value="no">いいえ
