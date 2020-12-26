@@ -9,8 +9,8 @@
 <body>
 <form action="Result" method="post">
 スペイン語で月曜はLunesである。
-<input type="radio" name="ans" value="yes">はい
-<input type="radio" name="ans" value="no">いいえ
+<label><input type="radio" name="ans" value="yes">はい</label>
+<label><input type="radio" name="ans" value="no">いいえ</label>
 <input type="submit" value="送信">
 </form>
 </body>

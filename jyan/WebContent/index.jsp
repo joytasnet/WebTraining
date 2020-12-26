@@ -3,7 +3,7 @@
 <%
 String[] pict={"gu.png","choki.png","pa.png"};
 String[] handNames={"ぐー","ちょき","ぱー"};
-String btn=request.getParameter("btn");
+String[] results={"あいこ","アナタのまけです...","アナタのかちです！"};
 String hand=request.getParameter("hand");
 %>
 <!DOCTYPE html>
@@ -16,30 +16,21 @@ String hand=request.getParameter("hand");
 </head>
 <body>
 <form method="post">
-<% for(int i=0;i<handNames.length;i++){ %>
-<input type="radio" name="hand" value="<%=i%>"><%=handNames[i] %><br>
-<%} %>
-<button type="submit" name="btn">ショウブ</button>
+	<% for(int i=0;i<handNames.length;i++){ %>
+		<input type="radio" name="hand" value="<%=i%>"><%=handNames[i] %><br>
+	<%} %>
+	<button type="submit">ショウブ</button>
 </form>
-<%if(btn != null && hand != null){ %>
-<%
-int userHand=Integer.parseInt(hand);
-int pcHand=(int)(Math.random()*3);
-String result;
-int diff=(userHand+3 -pcHand)%3;
-if(diff==0){
-	result="あいこ";
-}else if(diff==1){
-	result="アナタのまけです...";
-}else{
-	result="アナタのかちです！";
-}
-%>
-<div>
-<img src="images/<%=pict[userHand]%>">
-<img src="images/<%=pict[pcHand]%>">
-</div>
-<p><%=result %></p>
+<%if(hand != null){ %>
+	<%
+	int userHand=Integer.parseInt(hand);
+	int pcHand=(int)(Math.random()*3);
+	%>
+	<div>
+		<img src="images/<%=pict[userHand]%>">
+		<img src="images/<%=pict[pcHand]%>">
+	</div>
+	<p><%=results[(userHand+3 -pcHand)%3] %></p>
 <%} %>
 </body>
 </html>
