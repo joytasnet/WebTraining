@@ -33,10 +33,12 @@ public class CounterServlet extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		super.init(config);//お約束
 
+		/*
 		Integer count=0;
 		ServletContext application=config.getServletContext();
 		application.setAttribute("count",count);
 		System.out.println("init()が実行されました");
+		*/
 	}
 
 	/**
